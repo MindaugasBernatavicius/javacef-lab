@@ -10,7 +10,7 @@ General instruction: https://bitbucket.org/chromiumembedded/java-cef/wiki/Branch
 Additional remarks:
 - If you get an error like this:
    ```
-   Could NOT find JNI (missing: JAVA_INCLUDE_PATH JAVA_INCLUDE_PATH2 JAVA_AWT_INCLUDE_PATH) (Required is at least version "1.7")
+   Could NOT find JNI (missing: JAVA_INCLUDE_PATH JAVA_INCLUDE_PATH2 JAVA_AWT_INCLUDE_PATH)...
    ```
 - check then one or more of these files can not be found: https://cmake.org/cmake/help/v3.0/module/FindJNI.html
 - after downgrading to JAVA 8 I could finally find the file:
