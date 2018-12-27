@@ -25,4 +25,23 @@ Additional remarks:
 - Retry cmake: `cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ..`
 - proceed with `make -j<core_count>`
 
+Successfull build process should end with this console output:
+```
+[ 97%] Building CXX object native/CMakeFiles/jcef.dir/critical_wait_posix.cpp.o
+[ 98%] Building CXX object native/CMakeFiles/jcef.dir/jni_util_linux.cpp.o
+[ 98%] Building CXX object native/CMakeFiles/jcef.dir/signal_restore_posix.cpp.o
+[ 99%] Building CXX object native/CMakeFiles/jcef.dir/temp_window_x11.cc.o
+[ 99%] Building CXX object native/CMakeFiles/jcef.dir/util_linux.cpp.o
+[ 99%] Building CXX object native/CMakeFiles/jcef.dir/util_posix.cpp.o
+[100%] Linking CXX shared library Release/libjcef.so
+
+*** Run the following commands manually to create necessary symlinks ***
+sudo ln -s /home/mindaugas/java-cef/third_party/cef/cef_binary_3.3538.1852.gcb937fc_linux64/Resources/icudtl.dat /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/icudtl.dat
+sudo ln -s /home/mindaugas/java-cef/third_party/cef/cef_binary_3.3538.1852.gcb937fc_linux64/Release/natives_blob.bin /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/natives_blob.bin
+sudo ln -s /home/mindaugas/java-cef/third_party/cef/cef_binary_3.3538.1852.gcb937fc_linux64/Release/snapshot_blob.bin /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/snapshot_blob.bin
+sudo ln -s /home/mindaugas/java-cef/third_party/cef/cef_binary_3.3538.1852.gcb937fc_linux64/Release/v8_context_snapshot.bin /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/v8_context_snapshot.bin
+
+[100%] Built target jcef
+```
+
 ## hello-world
