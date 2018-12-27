@@ -1,6 +1,6 @@
 # javacef-lab
 
-### instalation
+### installation
 
 ### hello-world
 
