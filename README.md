@@ -80,7 +80,8 @@ Even though CEF build succeeded with seemingly correct options:
 
    ```
 - What helped was exporting the java-8 jre/lib/amd64 folder to LD_LIBRARY_PATH:
-	```vim run.sh
+	```
+	vim run.sh
 	export LD_LIBRARY_PATH=$LIB_PATH:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64
 	```
 
