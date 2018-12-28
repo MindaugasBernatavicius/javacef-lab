@@ -71,6 +71,13 @@ Even though CEF build succeeded with seemingly correct options:
    ```
    mindaugas@mindaugas-VirtualBox:~/java-cef/tools$ ls -laht /usr/bin/javac
    lrwxrwxrwx 1 root root 23 lapkr 29 01:06 /usr/bin/javac -> /etc/alternatives/javac
+   ````
+   ... so I updated the laternatives for java and javac: `sudo update-alternatives --config javac`. Go the same error, but solved a warning: 
+   ```
+   mindaugas@mindaugas-VirtualBox:~/java-cef/tools$ ./compile.sh linux64
+   Note: Some input files use or override a deprecated API.
+   Note: Recompile with -Xlint:deprecation for details.
+
    ```
 
 ## hello-world
