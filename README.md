@@ -44,4 +44,33 @@ sudo ln -s /home/mindaugas/java-cef/third_party/cef/cef_binary_3.3538.1852.gcb93
 [100%] Built target jcef
 ```
 
+While testing the installation I received the error:
+```
+mindaugas@mindaugas-VirtualBox:~/java-cef/tools$ ./run.sh linux64 Release simple
+Exception in thread "main" java.lang.UnsatisfiedLinkError: /home/mindaugas/java-cef/jcef_build/native/Release/libjcef.so: libjawt.so: cannot open shared object file: No such file or directory
+	at java.base/java.lang.ClassLoader$NativeLibrary.load0(Native Method)
+	at java.base/java.lang.ClassLoader$NativeLibrary.load(ClassLoader.java:2424)
+	at java.base/java.lang.ClassLoader$NativeLibrary.loadLibrary(ClassLoader.java:2481)
+	at java.base/java.lang.ClassLoader.loadLibrary0(ClassLoader.java:2678)
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2643)
+	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:876)
+	at java.base/java.lang.System.loadLibrary(System.java:1875)
+	at org.cef.CefApp.startup(CefApp.java:518)
+	at tests.simple.MainFrame.main(MainFrame.java:140)
+```
+
+Even though CEF build succeeded with seemingly correct options:
+```-- *** JCEF CONFIGURATION SETTINGS ***
+-- Python executable:            /usr/bin/python
+-- Java directory:               /usr/lib/jvm/java-8-openjdk-amd64
+-- JNI libraries:                /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjawt.so;/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+-- JNI include directories:      /usr/lib/jvm/java-8-openjdk-amd64/include;/usr/lib/jvm/java-8-openjdk-amd64/include/linux;/usr/lib/jvm/java-8-openjdk-amd64/include
+```
+
+- My initial idea is that I still have Java 10 as my main Java installation (so javac and java commands are v10, not v8) and scripts like "compile.sh" use that installation. Need to change that:
+   ```
+   mindaugas@mindaugas-VirtualBox:~/java-cef/tools$ ls -laht /usr/bin/javac
+   lrwxrwxrwx 1 root root 23 lapkr 29 01:06 /usr/bin/javac -> /etc/alternatives/javac
+   ```
+
 ## hello-world
